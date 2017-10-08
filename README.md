@@ -1,5 +1,5 @@
 # srt to vtt converter
-A PHP **command line** script to convert a subtitles from SubRip to WebVTT subtitles format.
+A PHP **command line** script to convert subtitles from SubRip to WebVTT format.
 
 This tool is based on [WebVTT-to-SRT](https://github.com/tunggnu/WebVTT-to-SRT). It just does the contrary.
 
