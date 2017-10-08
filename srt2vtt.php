@@ -30,7 +30,6 @@ $length = count($lines);
 for ($index = 1; $index < $length; $index++) {
     // A line is a timestamp line if the second line above it is an empty line
     if ( trim($lines[$index - 2]) === '' ) {
-        echo "$lines[$index] \n";
         $lines[$index] = str_replace(',', '.', $lines[$index]);
     }
 }
