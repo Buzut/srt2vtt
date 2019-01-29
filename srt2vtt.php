@@ -6,18 +6,17 @@ if (empty($argv) or $argc !== 3) {
 }
 
 // Get file paths
-$webVttFile = $argv[1];
-$srtFile = $argv[2];
+$srtFile = $argv[1];
+$webVttFile = $argv[2];
 
 // Read the srt file content into an array of lines
-$fileHandle = fopen($webVttFile, 'r');
+$fileHandle = fopen($srtFile, 'r');
+
 if ($fileHandle) {
     // Assume that every line has maximum 8192 length
     // If you don't care about line length then you can omit the 8192 param
     $lines = array();
-    while (($line = fgets($fileHandle, 8192)) !== false) {
-        $lines[] = $line;
-    }
+    while (($line = fgets($fileHandle, 8192)) !== false) $lines[] = $line;
 
     if (!feof($fileHandle)) exit ("Error: unexpected fgets() fail\n");
     else ($fileHandle);
@@ -36,4 +35,4 @@ for ($index = 1; $index < $length; $index++) {
 
 // Insert VTT header and concatenate all lines in the new vtt file
 $header = "WEBVTT\n\n";
-file_put_contents($srtFile, $header . implode('', $lines));
+file_put_contents($webVttFile, $header . implode('', $lines));
