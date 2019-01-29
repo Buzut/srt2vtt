@@ -5,7 +5,13 @@ This tool is based on [WebVTT-to-SRT](https://github.com/tunggnu/WebVTT-to-SRT).
 
 ## Usage
 Just provide source and destination files path.
-`php srt2vtt.php </some/path/original.vtt> <other/path/result.srt>`
+`php srt2vtt.php </some/path/original.srt> <other/path/result.vtt>`
+
+Exemple:
+
+```
+php srt2vtt.php my-movie.srt my-movie.vtt
+```
 
 Don't hesitate to use bash `for` loops to convert many files in in a row.
 
